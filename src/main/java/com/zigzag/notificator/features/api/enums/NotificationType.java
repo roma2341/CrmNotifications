@@ -4,7 +4,8 @@ import java.util.EnumSet;
 
 public enum NotificationType {
     USER_CREATED(NotificationDestination.EMAIL),
-    USER_DELETED;
+    USER_DELETED,
+    AUTHOR_RELEASED_BOOK;
 
     EnumSet<NotificationDestination>  destinations = EnumSet.allOf(NotificationDestination.class);
     NotificationType(NotificationDestination destination){

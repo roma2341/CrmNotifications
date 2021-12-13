@@ -11,6 +11,10 @@ import java.util.stream.Collectors;
 
 import static java.util.function.UnaryOperator.identity;
 
+/*
+ *I think that notification service should be separate module
+ * Notifications shouldn't depend on business logic
+ */
 public class NotificationHelper {
     Map<NotificationDestination,NotificationOutboundAdapter> notificationAdapters;
     NotificationHelper(List<NotificationOutboundAdapter> adapters){
