@@ -19,6 +19,7 @@ public interface Notification {
      * 1. What about notifications versioning
      * 2. Entity->Dto
      * 3. Flat model structure
+     * 4. No relations joining - performance++
      * @return
      */
     Map<String,Object> getModel();

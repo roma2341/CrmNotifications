@@ -13,6 +13,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+-Need to mention that all logic for sending specific notifications could be handled by single class.
+-Also we can make common class for them.
+ */
 public class AuthorReleasedBookUsecase {
     @Autowired
     NotificationHelper notificationHelper;
@@ -23,9 +27,7 @@ public class AuthorReleasedBookUsecase {
     * Behaviour is more obvious, so fewer pitfalls (And no LazyInitialization Exceptions)
     * */
     @Transactional(readOnly = true)
-    public void handle() {
-        //input
-        var user = new CoreAuthorEntity();
+    public void handle(CoreAuthorEntity user) {
 
         //send notifications
         var notification = CoreNotification.builder()

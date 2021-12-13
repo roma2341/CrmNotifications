@@ -28,6 +28,10 @@ public class UserCreatedUsecaseV2 {
         notificationHelper.sendNotification(notification);
     }
 
+    /*
+    Allows to update body if required (if we modified template we can recreate previous models to have additional
+     properties, but we can't use entity in migration, so we have to migrate data after spring run), we can involve version attribute.
+     */
     static Map<String,Object> UserNotificationModelBuilder(CoreUser user){
         Map<String,Object> map = new HashMap<>();
         map.put("user_name",user.getName());
